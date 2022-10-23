@@ -28,6 +28,7 @@ contract VendingMachine {
         machineItems[msg.sender] += _amount;
     }
     function balanceOfContract() public view returns (uint){
+        require(msg.sender==owner,"You can't access this function");
         return address(this).balance;
     }
 }
